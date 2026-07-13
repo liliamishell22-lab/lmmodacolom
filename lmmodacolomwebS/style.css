@@ -2,19 +2,24 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
 background:#F5F0E8;
+color:#333;
 }
 
 header{
+position:fixed;
+top:0;
+width:100%;
 background:#111;
-padding:20px;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+z-index:1000;
 }
 
 .logo{
@@ -25,18 +30,23 @@ font-weight:bold;
 
 nav ul{
 display:flex;
-gap:20px;
+gap:25px;
 list-style:none;
 }
 
 nav a{
 color:white;
 text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#D4AF37;
 }
 
 .banner{
-height:500px;
-background:url("../img/banner.jpg");
+height:100vh;
+background:url('img/banner.jpg');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -44,97 +54,152 @@ justify-content:center;
 align-items:center;
 }
 
-.contenido-banner{
-background:rgba(0,0,0,.6);
-padding:30px;
-border-radius:10px;
+.overlay{
+background:rgba(0,0,0,.65);
+padding:50px;
+border-radius:20px;
 text-align:center;
 color:white;
 }
 
+.overlay h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
 .btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 30px;
 background:#6B0F1A;
-padding:12px 20px;
 color:white;
 text-decoration:none;
-display:inline-block;
-margin-top:15px;
+border-radius:50px;
 }
 
 section{
-padding:60px 10%;
+padding:100px 10%;
 }
 
 h2{
 text-align:center;
-margin-bottom:30px;
+margin-bottom:40px;
 color:#6B0F1A;
 }
 
 .productos{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
 background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 2px 8px rgba(0,0,0,.2);
-text-align:center;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
 }
 
 .card img{
 width:100%;
 height:300px;
 object-fit:cover;
-border-radius:10px;
 }
 
+.card h3,
 .card p{
-font-weight:bold;
-color:#6B0F1A;
+padding:10px;
+text-align:center;
 }
 
-.beneficios{
-text-align:center;
+.card button{
+width:90%;
+margin:15px;
+padding:12px;
+background:#6B0F1A;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.contenedor-beneficios{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .beneficio{
 background:white;
-padding:20px;
-margin:10px;
+padding:25px;
 border-radius:10px;
+}
+
+.testimonios{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.testimonio{
+background:white;
+padding:25px;
+width:300px;
+border-radius:10px;
+text-align:center;
 }
 
 form{
 background:white;
 padding:30px;
-border-radius:10px;
+border-radius:15px;
 }
 
 input,
 textarea{
 width:100%;
-padding:12px;
+padding:15px;
 margin:10px 0;
+border:1px solid #ccc;
 }
 
 button{
-width:100%;
-padding:12px;
 background:#6B0F1A;
 color:white;
+padding:15px;
 border:none;
+width:100%;
 cursor:pointer;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:30px;
+text-decoration:none;
 }
 
 footer{
 background:#111;
 color:white;
 text-align:center;
-padding:20px;
+padding:40px;
 }
 
 @media(max-width:768px){
@@ -146,6 +211,10 @@ flex-direction:column;
 nav ul{
 flex-direction:column;
 text-align:center;
+}
+
+.overlay h1{
+font-size:35px;
 }
 
 }

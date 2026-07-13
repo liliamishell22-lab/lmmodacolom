@@ -1,16 +1,16 @@
-document
-.getElementById("formulario")
-.addEventListener("submit", function(e){
+const formulario = document.getElementById("formulario");
+
+formulario.addEventListener("submit", function(e){
 
 e.preventDefault();
 
-let nombre =
+const nombre =
 document.getElementById("nombre").value;
 
-let correo =
+const correo =
 document.getElementById("correo").value;
 
-let mensaje =
+const mensaje =
 document.getElementById("mensaje").value;
 
 if(
@@ -18,14 +18,28 @@ nombre === "" ||
 correo === "" ||
 mensaje === ""
 ){
-
-alert("Complete todos los campos");
-
+alert("Por favor complete todos los campos.");
 return;
 }
 
-alert("Mensaje enviado correctamente");
+alert(
+"Gracias por contactarnos. Te responderemos pronto."
+);
 
-this.reset();
+formulario.reset();
+
+});
+
+window.addEventListener("scroll", () => {
+
+const header =
+document.querySelector("header");
+
+if(window.scrollY > 50){
+header.style.background = "#000";
+}
+else{
+header.style.background = "#111";
+}
 
 });
